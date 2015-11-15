@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:body>
+        <ui:composition template="../../templates/principal.xhtml"> 
+            <ui:define name="content">
+                <p>
+                    <h3>Detalhamento Filme</h3>
+                </p>
+                <hr></hr>
+                <br></br>
+
+                <h:form class="form-horizontal">
+
+                    <div class="validation-summary-errors">
+                        <ul>
+                            <h:messages id="mensagemFilme" errorStyle="color:red;" showDetail="false"/>
+                        </ul>
+                    </div>
+
+                    <div class="form-group">
+                        <h:outputLabel for="idNome" class="col-sm-2 control-label" value="Nome:"/>
+                        <div class="col-sm-10">
+                            <h:inputText disabled="#{!filmeController.actionNew}" id="idNome" class="form-control" value="#{filmeController.filmeDetail.nome}"  />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <h:outputLabel for="idGenero" class="col-sm-2 control-label" value="Gênero:"/>
+                        <div class="col-sm-5">
+                            <h:selectOneMenu class="form-control" id="idGenero" value="#{filmeController.filmeDetail.genero}">
+                                <f:selectItem itemLabel="(Selecione)" itemValue="" />
+                                <f:selectItem itemLabel="Comédia" itemValue="Comedia" />
+                                <f:selectItem itemLabel="Drama" itemValue="Drama" />
+                                <f:selectItem itemLabel="Terror" itemValue="Terror" />
+                                <f:selectItem itemLabel="Ação" itemValue="Acao" />
+                                <f:selectItem itemLabel="Romance" itemValue="Romance" />
+                            </h:selectOneMenu>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <h:outputLabel for="idAno" class="col-sm-2 control-label" value="Ano:"/>
+                        <div class="col-sm-3">
+                            <h:inputText maxlength="4" id="idAno" class="form-control" value="#{filmeController.filmeDetail.ano}"  />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <h:outputLabel for="idNomeDiretor" class="col-sm-2 control-label" value="Nome do Diretor:"/>
+                        <div class="col-sm-10">
+                            <h:inputText id="idNomeDiretor" class="form-control" value="#{filmeController.filmeDetail.diretor}"  />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <h:outputLabel for="idSinopse" class="col-sm-2 control-label" value="Sinopse:"/>
+                        <div class="col-sm-10">
+                            <h:inputTextarea rows="3" id="idSinopse" class="form-control" value="#{filmeController.filmeDetail.sinopse}"  />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <h:commandButton value="Salvar" class="btn btn-success" action="#{filmeController.salvar()}"></h:commandButton>
+                        </div>
+                    </div>
+
+                    <hr></hr>
+                    <br></br>
+                    <h:commandButton value="Voltar" class="btn btn-primary" action="#{filmeController.search()}"></h:commandButton>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+
+</html>
+
