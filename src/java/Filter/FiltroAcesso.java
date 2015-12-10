@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebFilter(filterName = "FiltroAcesso", urlPatterns = {"/faces/views/*"})
+//@WebFilter(filterName = "FiltroAcesso", urlPatterns = {"/faces/views/*"})
 public class FiltroAcesso extends BaseFilter {
     
     public FiltroAcesso() {

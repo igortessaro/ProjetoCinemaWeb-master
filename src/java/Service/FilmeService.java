@@ -4,7 +4,9 @@ import DomainEntity.Filme;
 import Exception.BusinessException;
 import Repository.FilmeRepository;
 import java.util.List;
+import javax.ejb.Stateless;
 
+@Stateless
 public class FilmeService {
     
     public FilmeService(){
@@ -19,6 +21,13 @@ public class FilmeService {
     
     public Filme obter(String nome){
         return this.repository.obter(nome);
+    }
+    
+    public void atualizar(Filme filme) throws BusinessException{
+        if(filme == null)
+            throw new BusinessException("Filme não informado!");
+        
+        this.repository.Update(filme);
     }
     
     public void salvar(Filme filme) throws BusinessException{

@@ -5,6 +5,7 @@
  */
 package DomainEntity;
 
+import DTO.FilmeDTO;
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Basic;
@@ -21,11 +22,13 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Igor
  */
+@XmlRootElement
 @Entity
 @Table(name = "filme")
 @NamedQueries({
@@ -85,6 +88,15 @@ public class Filme implements Serializable {
         this.sinopse = sinopse;
         this.ano = ano;
         this.diretor = diretor;
+    }
+
+    public Filme(FilmeDTO filmeDTO) {
+        this.id = filmeDTO.getId();
+        this.nome = filmeDTO.getNome();
+        this.genero = filmeDTO.getGenero();
+        this.sinopse = filmeDTO.getSinopse();
+        this.ano = filmeDTO.getAno();
+        this.diretor = filmeDTO.getDiretor();
     }
 
     public Integer getId() {

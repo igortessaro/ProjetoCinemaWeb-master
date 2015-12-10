@@ -108,7 +108,7 @@ public class SalaController {
 
     private void atualizar(Sala sala) {
         try {
-            this.service.salvar(sala);
+            this.service.atualizar(sala);
         } catch (BusinessException ex) {
             Logger.getLogger(SalaController.class.getName()).log(Level.SEVERE, null, ex);
         }

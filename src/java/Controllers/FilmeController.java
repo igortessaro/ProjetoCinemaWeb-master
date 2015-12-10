@@ -19,7 +19,7 @@ public class FilmeController {
 
     private static final String urlDefault = "/faces/views/cadastros/filme/search.xhtml";
     private static final String urlEdit = "/faces/views/cadastros/filme/detail.xhtml";
-    
+
     private final FilmeService service;
 
     public FilmeController() {
@@ -92,52 +92,54 @@ public class FilmeController {
         return urlEdit + "?faces-redirect=true";
     }
 
-    public String salvar() {        
+    public String salvar() {
         if (this.actionNew) {
             if (!this.adicionarFilmeNovo(this.filmeDetail)) {
                 return urlEdit + "?faces-redirect=true";
             }
             return urlDefault + "?faces-redirect=true";
+        } else {
+            this.atualizarFilme(this.filmeDetail);
         }
-        this.atualizarFilme(this.filmeDetail);
 
         return urlDefault + "?faces-redirect=true";
     }
 
     private boolean adicionarFilmeNovo(Filme filme) {
         boolean result = true;
-        
-        try{
+
+        try {
             this.service.salvar(filme);
-        }catch(BusinessException ex){
+        } catch (BusinessException ex) {
             String erro = ex.getMessage();
-            
+
             FacesMessage mensagem = new FacesMessage(
-                FacesMessage.SEVERITY_ERROR,
-                "[ERRO]: "+erro,
-                "Informe um filme NOVO!");
+                    FacesMessage.SEVERITY_ERROR,
+                    "[ERRO]: " + erro,
+                    "Informe um filme NOVO!");
             this.adicionarMensagemErro(mensagem);
-            
+
             result = false;
         }
 
-        if(result)
+        if (result) {
             this.filmeList = this.service.obterTodos();
-        
+        }
+
         return result;
     }
 
     private void atualizarFilme(Filme filme) {
         try {
-            this.service.salvar(filme);
+            this.service.atualizar(filme);
             this.filmeList = this.service.obterTodos();
         } catch (BusinessException ex) {
             String erro = ex.getMessage();
-            
+
             FacesMessage mensagem = new FacesMessage(
-                FacesMessage.SEVERITY_ERROR,
-                "[ERRO]: "+erro,
-                erro);
+                    FacesMessage.SEVERITY_ERROR,
+                    "[ERRO]: " + erro,
+                    erro);
             this.adicionarMensagemErro(mensagem);
         }
     }

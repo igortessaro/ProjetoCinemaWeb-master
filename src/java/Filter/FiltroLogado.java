@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebFilter(filterName = "FiltroLogado", urlPatterns = {"/faces/login.xhtml"})
+//@WebFilter(filterName = "FiltroLogado", urlPatterns = {"/faces/login.xhtml"})
 public class FiltroLogado extends BaseFilter {
     
     public FiltroLogado() {

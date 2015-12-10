@@ -20,6 +20,13 @@ public class SalaService {
         return this.repository.obterPorNumero(numero);
     }
     
+    public void atualizar(Sala entity) throws BusinessException{
+        if(entity == null)
+            throw new BusinessException("Sala não informado!");
+        
+        this.repository.Update(entity);
+    }
+    
     public void salvar(Sala entity) throws BusinessException{
         if(entity == null)
             throw new BusinessException("Sala não informado!");

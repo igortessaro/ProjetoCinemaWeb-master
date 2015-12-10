@@ -3,8 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Igor/Desktop/ProjetoCinemaWeb-master/src/java/Controllers/VendaController.java</file>
-            <file>file:/C:/Users/Igor/Desktop/ProjetoCinemaWeb-master/web/views/cadastros/venda/search.xhtml</file>
+            <file>file:/F:/SenacRS/ProgramacaoInternetII/ProjetoCinemaWeb-master/src/java/Controllers/FilmeController.java</file>
+            <file>file:/F:/SenacRS/ProgramacaoInternetII/ProjetoCinemaWeb-master/src/java/Service/SalaService.java</file>
+            <file>file:/F:/SenacRS/ProgramacaoInternetII/ProjetoCinemaWeb-master/src/java/Controllers/SecaoController.java</file>
+            <file>file:/F:/SenacRS/ProgramacaoInternetII/ProjetoCinemaWeb-master/src/java/Service/FilmeService.java</file>
+            <file>file:/F:/SenacRS/ProgramacaoInternetII/ProjetoCinemaWeb-master/src/java/Controllers/SalaController.java</file>
+            <file>file:/F:/SenacRS/ProgramacaoInternetII/ProjetoCinemaWeb-master/web/views/cadastros/filme/detail.xhtml</file>
         </group>
     </open-files>
 </project-private>
